@@ -1,86 +1,85 @@
-Course: Natural Language Processing
-Student Name: Tejaswini Kolluru
-Student ID: 700773943
+# 🌐 Natural Language Processing – Assignment  
+**Student Name:** Tejaswini Kolluru  
+**Student ID:** 700773943  
 
-1. Character-level RNN (GRU)
-Goal
+---
 
-The goal of this task is to train a simple character-level RNN that predicts the next character in a text sequence using PyTorch.
+# 1. Character-level RNN (GRU)
 
-Architecture Used:
-Embedding → GRU → Linear → Softmax
+##  Goal  
+The task involves training a small **character-level RNN** that predicts the next character in a sequence using **PyTorch**.
 
-Training Method:
+**Model Architecture:**  
+`Embedding → GRU → Linear → Softmax`
+
+**Training Method:**  
 Teacher forcing, Adam optimizer, and cross-entropy loss.
 
-Dataset
+---
 
-The model can be trained on:
+##  Dataset  
+The model can be trained on any of the following:
+- A tiny toy corpus (e.g., "hello", "help")  
+- A 100–200 KB public-domain text (e.g., *Pride and Prejudice*)  
+- A custom uploaded `.txt` file  
 
-A tiny toy corpus (e.g., "hello", "help")
+---
 
-A small public-domain text (100–200 KB)
+##  Model & Training Details  
+- Hidden size: **64–256** (default: 128)  
+- Sequence length: **50–100** (default: 100)  
+- Batch size: **64**  
+- Epochs: **5–20**  
+- Teacher forcing for stable learning  
 
-A custom .txt file uploaded by the user
+---
 
-Model & Training Details
+##  Results  
+1. **Training & validation loss curves** plotted after training  
+2. **Three sample generations** (length 200-400 chars) at temperatures:  
+   - τ = 0.7  
+   - τ = 1.0  
+   - τ = 1.2  
+3. **Reflection** discussing:  
+   - Sequence length effects  
+   - Hidden size effects  
+   - Temperature differences  
+   - Connections to class slides  
 
-Hidden size: 64–256 (default: 128)
+---
 
-Sequence length: 50–100 (default: 100)
+##  Connection to Lecture Slides  
+- Embeddings represent characters in dense form  
+- Sampling loop generates text one character at a time  
+- Teacher forcing stabilizes learning  
+- GRUs balance simplicity & performance  
+- Transformers extend these ideas via attention  
 
-Batch size: 64
+---
 
-Epochs: 5–20
+# 2. Mini Transformer Encoder (NumPy)
 
-Teacher forcing for stable training
+This notebook implements a **mini Transformer Encoder** using NumPy, following all assignment instructions and explaining each step.
 
-Results Generated
+---
 
-Training and validation loss curves
+##  What the Notebook Demonstrates  
 
-Three sample text generations at temperatures 0.7, 1.0, 1.2
+1. It begins by selecting a small dataset of **10 short sentences**.  
 
-Reflection discussing sequence length, hidden size, temperature effects, and connections to class slides
+2. It shows how the sentences were **tokenized**, how the vocabulary was built, and how token IDs were created.  
 
-Connection to Lecture Slides
+3. It demonstrates how **sinusoidal positional encoding** was added to the word embeddings.  
 
-Embeddings encode characters as vectors
+4. It implements the main components of a Transformer encoder, including:  
+   - Self-attention  
+   - Multi-head attention (with **2 heads**)  
+   - Feed-forward layer  
+   - Add & LayerNorm around both sublayers  
 
-Sampling loop generates text one character at a time
+5. It displays the required outputs, including:  
+   - Input token sequences  
+   - Final contextual embeddings  
+   - An attention heatmap showing how words attend to one another  
 
-Teacher forcing improves stability
 
-GRUs balance simplicity and performance
-
-Transformers extend these ideas using attention mechanisms
-
-2. Mini Transformer Encoder (NumPy)
-
-This part of the assignment involves implementing a mini Transformer Encoder from scratch using NumPy. The notebook follows the instructions step-by-step and explains each part clearly.
-
-What the notebook demonstrates:
-
-It begins by selecting a small dataset of 10 short sentences.
-
-It shows how the sentences were tokenized, how the vocabulary was built, and how token IDs were generated.
-
-It demonstrates how sinusoidal positional encoding was added to the word embeddings.
-
-It implements the main components of a Transformer encoder, including:
-
-Self-attention
-
-Multi-head attention (with 2 heads)
-
-Feed-forward layer
-
-Add & LayerNorm around both sublayers
-
-It displays the required outputs:
-
-Input token sequences
-
-Final contextual embeddings
-
-An attention heatmap showing how words attend to each other
