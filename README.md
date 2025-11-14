@@ -1,4 +1,4 @@
-# 🌐 Natural Language Processing – Assignment  
+#  Natural Language Processing – Assignment4
 **Student Name:** Tejaswini Kolluru  
 **Student ID:** 700773943  
 
@@ -59,11 +59,9 @@ The model can be trained on any of the following:
 
 # 2. Mini Transformer Encoder (NumPy)
 
-This notebook implements a **mini Transformer Encoder** using NumPy, following all assignment instructions and explaining each step.
+This task implements a **mini Transformer Encoder** using NumPy
 
 ---
-
-##  What the Notebook Demonstrates  
 
 1. It begins by selecting a small dataset of **10 short sentences**.  
 
@@ -80,6 +78,15 @@ This notebook implements a **mini Transformer Encoder** using NumPy, following a
 5. It displays the required outputs, including:  
    - Input token sequences  
    - Final contextual embeddings  
-   - An attention heatmap showing how words attend to one another  
+   - An attention heatmap showing how words attend to one another
+      
+# 3. Scaled Dot-Product Attention (PyTorch)
 
+This task implements the **Scaled Dot-Product Attention** function
 
+1. A PyTorch function that computes attention scores, scaling, softmax, and output vectors.  
+2. Random Q, K, V tensors for testing.  
+3. Printed results showing:  
+   - Attention weight matrix  
+   - Output vectors  
+   - Softmax before vs. after scaling (stability check)
