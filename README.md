@@ -1,52 +1,86 @@
-# Character-level RNN (GRU) – NLP Assignment
+Course: Natural Language Processing
+Student Name: Tejaswini Kolluru
+Student ID: 700773943
 
-**Course:** Natural Language Processing  
-**Student Name:** Tejaswini Kolluru  
-**Student ID:** 700773943
+1. Character-level RNN (GRU)
+Goal
 
----
+The goal of this task is to train a simple character-level RNN that predicts the next character in a text sequence using PyTorch.
 
-## Goal
-Train a tiny **character-level RNN** to predict the next character in a text sequence, using **PyTorch**.
+Architecture Used:
+Embedding → GRU → Linear → Softmax
 
-**Architecture:**  
-`Embedding → GRU → Linear → Softmax`
+Training Method:
+Teacher forcing, Adam optimizer, and cross-entropy loss.
 
-**Training Method:**  
-Teacher forcing, cross-entropy loss, Adam optimizer.
+Dataset
 
----
+The model can be trained on:
 
-## Dataset
-- **Option 1:** Small toy corpus (like "hello", "help", etc.)  
-- **Option 2:** Auto-download a 100–200 KB public-domain text (e.g., *Pride and Prejudice*)  
-- **Option 3:** Upload your own `.txt` file  
+A tiny toy corpus (e.g., "hello", "help")
 
----
+A small public-domain text (100–200 KB)
 
-## Model & Training
-- Hidden size: 64–256 (default: 128)  
-- Sequence length: 50–100 (default: 100)  
-- Batch size: 64  
-- Trained for 5–20 epochs  
-- Teacher forcing used for stable learning  
+A custom .txt file uploaded by the user
 
----
+Model & Training Details
 
-## Results
-1. **Training and Validation Loss Curves:**  
-   Plotted at the end of training.  
-2. **Sample Generations:**  
-   3 outputs at different temperatures (τ = 0.7, 1.0, 1.2), each 200–400 characters long.  
-3. **Reflection:**  
-   Discusses the effect of sequence length, hidden size, and temperature.  
-   Also connects to slides on embeddings, sampling loop, teacher forcing, and model tradeoffs.
+Hidden size: 64–256 (default: 128)
 
----
+Sequence length: 50–100 (default: 100)
 
-## Connection to Lecture Slides
-- **Embedding:** Encodes characters into dense representations for learning relationships.  
-- **Sampling Loop:** Generates text one character at a time using model predictions.  
-- **Teacher Forcing:** Stabilizes training by feeding the real previous character.  
-- **Tradeoffs:** GRUs offer efficiency and strong performance compared to LSTMs.  
-- **Transformers:** Modern models like GPT extend these ideas using attention instead of recurrence.
+Batch size: 64
+
+Epochs: 5–20
+
+Teacher forcing for stable training
+
+Results Generated
+
+Training and validation loss curves
+
+Three sample text generations at temperatures 0.7, 1.0, 1.2
+
+Reflection discussing sequence length, hidden size, temperature effects, and connections to class slides
+
+Connection to Lecture Slides
+
+Embeddings encode characters as vectors
+
+Sampling loop generates text one character at a time
+
+Teacher forcing improves stability
+
+GRUs balance simplicity and performance
+
+Transformers extend these ideas using attention mechanisms
+
+2. Mini Transformer Encoder (NumPy)
+
+This part of the assignment involves implementing a mini Transformer Encoder from scratch using NumPy. The notebook follows the instructions step-by-step and explains each part clearly.
+
+What the notebook demonstrates:
+
+It begins by selecting a small dataset of 10 short sentences.
+
+It shows how the sentences were tokenized, how the vocabulary was built, and how token IDs were generated.
+
+It demonstrates how sinusoidal positional encoding was added to the word embeddings.
+
+It implements the main components of a Transformer encoder, including:
+
+Self-attention
+
+Multi-head attention (with 2 heads)
+
+Feed-forward layer
+
+Add & LayerNorm around both sublayers
+
+It displays the required outputs:
+
+Input token sequences
+
+Final contextual embeddings
+
+An attention heatmap showing how words attend to each other
